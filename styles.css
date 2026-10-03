@@ -1,18 +1,20 @@
 :root {
-  --paper: #f7f6f2;
-  --paper-deep: #efece5;
-  --ink: #17202a;
-  --ink-soft: #4d5964;
-  --line: rgba(23, 32, 42, 0.12);
-  --line-strong: rgba(23, 32, 42, 0.2);
-  --blue: #2f5cff;
-  --blue-deep: #2147c9;
-  --teal: #1b9c85;
+  --paper: #0a101c;
+  --paper-deep: #070b12;
+  --surface: rgba(255, 255, 255, 0.05);
+  --surface-strong: rgba(255, 255, 255, 0.09);
+  --ink: #f5f7fa;
+  --ink-soft: #9aa7bd;
+  --line: rgba(255, 255, 255, 0.12);
+  --line-strong: rgba(255, 255, 255, 0.2);
+  --blue: #4f7cff;
+  --blue-deep: #7c9dff;
+  --teal: #35e0c8;
   --amber: #f0a62e;
   --coral: #e7644f;
   --white: #ffffff;
-  --shadow-sm: 0 1px 2px rgba(23, 32, 42, 0.05), 0 8px 24px rgba(23, 32, 42, 0.04);
-  --shadow-md: 0 18px 50px rgba(23, 32, 42, 0.08);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.18);
+  --shadow-md: 0 18px 50px rgba(0, 0, 0, 0.28);
   --radius: 8px;
   --max: 1180px;
 }
@@ -27,7 +29,10 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
+  background:
+    radial-gradient(circle at 82% -10%, rgba(79, 124, 255, 0.18), transparent 38%),
+    radial-gradient(circle at 8% 110%, rgba(53, 224, 200, 0.12), transparent 36%),
+    var(--paper);
   color: var(--ink);
   font-family: "IBM Plex Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 16px;
@@ -77,7 +82,7 @@ svg {
   gap: 24px;
   width: 100%;
   padding: 14px max(24px, calc((100vw - var(--max)) / 2));
-  background: rgba(247, 246, 242, 0.9);
+  background: rgba(10, 16, 28, 0.82);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(16px);
 }
@@ -164,7 +169,7 @@ svg {
 
 .header-cta {
   padding: 9px 14px;
-  background: var(--ink);
+  background: var(--blue);
   color: var(--white);
   font-size: 13px;
   font-weight: 600;
@@ -318,7 +323,7 @@ main {
 }
 
 .button-secondary {
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--surface-strong);
   border: 1px solid var(--line-strong);
 }
 
@@ -351,7 +356,7 @@ main {
 .hero-visual {
   position: relative;
   padding: 22px;
-  background: rgba(255, 255, 255, 0.78);
+  background: var(--surface-strong);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-md);
 }
@@ -409,13 +414,13 @@ main {
   align-items: center;
   gap: 12px;
   padding: 13px 14px;
-  background: rgba(247, 246, 242, 0.8);
+  background: var(--surface);
   border: 1px solid transparent;
 }
 
 .workflow-step.is-active {
-  background: rgba(47, 92, 255, 0.07);
-  border-color: rgba(47, 92, 255, 0.24);
+  background: rgba(79, 124, 255, 0.12);
+  border-color: rgba(79, 124, 255, 0.28);
 }
 
 .step-index {
@@ -551,7 +556,7 @@ main {
 
 .timeline-card {
   padding: 26px 28px;
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--surface);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-sm);
 }
@@ -630,7 +635,7 @@ main {
 
 .case-study {
   padding: 30px;
-  background: rgba(255, 255, 255, 0.75);
+  background: var(--surface);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-sm);
 }
@@ -640,8 +645,8 @@ main {
   overflow: hidden;
   padding: 38px;
   background:
-    linear-gradient(135deg, rgba(47, 92, 255, 0.06), transparent 48%),
-    rgba(255, 255, 255, 0.88);
+    linear-gradient(135deg, rgba(79, 124, 255, 0.14), transparent 48%),
+    var(--surface-strong);
   border-top: 3px solid var(--blue);
 }
 
@@ -833,7 +838,7 @@ main {
 .capability-card {
   min-height: 230px;
   padding: 25px;
-  background: rgba(255, 255, 255, 0.68);
+  background: var(--surface);
   border: 1px solid var(--line);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
@@ -916,7 +921,7 @@ main {
 .chat-shell {
   display: grid;
   min-height: 540px;
-  background: rgba(255, 255, 255, 0.86);
+  background: var(--surface-strong);
   border: 1px solid var(--line-strong);
   box-shadow: var(--shadow-md);
 }
@@ -1068,7 +1073,7 @@ main {
 .chat-form button {
   width: 46px;
   min-height: 46px;
-  background: var(--ink);
+  background: var(--blue);
   color: var(--white);
 }
 
@@ -1079,7 +1084,7 @@ main {
 .contact {
   padding-bottom: 32px;
   background:
-    linear-gradient(120deg, rgba(47, 92, 255, 0.05), transparent 48%),
+    linear-gradient(120deg, rgba(79, 124, 255, 0.1), transparent 48%),
     var(--paper-deep);
 }
 
@@ -1396,7 +1401,7 @@ main {
 .resume-tags span {
   position: relative;
   padding: 10px 15px 10px 18px;
-  background: var(--white);
+  background: var(--surface-strong);
   border: 1px solid var(--line-strong);
   border-left: 4px solid var(--blue);
   box-shadow: 0 1px 2px rgba(23, 32, 42, 0.04);
@@ -1436,7 +1441,7 @@ main {
 
 .resume-contact {
   padding: 22px;
-  background: rgba(255, 255, 255, 0.82);
+  background: var(--surface-strong);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-sm);
 }
@@ -1486,7 +1491,7 @@ main {
   margin-top: 8px;
   padding: 13px;
   justify-content: center;
-  background: var(--ink);
+  background: var(--blue);
   color: var(--white);
   border-bottom: 0;
   font-weight: 600;
@@ -1599,7 +1604,7 @@ main {
 .project-primary,
 .project-secondary {
   padding: 28px;
-  background: rgba(255, 255, 255, 0.78);
+  background: var(--surface-strong);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-sm);
 }
@@ -1647,8 +1652,8 @@ main {
 
 .project-tags span {
   padding: 5px 9px;
-  background: rgba(47, 92, 255, 0.07);
-  border: 1px solid rgba(47, 92, 255, 0.18);
+  background: rgba(79, 124, 255, 0.12);
+  border: 1px solid rgba(79, 124, 255, 0.24);
   color: var(--blue-deep);
   font-size: 12px;
 }
@@ -1660,7 +1665,7 @@ main {
 
 .project-block {
   padding: 28px;
-  background: rgba(255, 255, 255, 0.78);
+  background: var(--surface);
   border: 1px solid var(--line);
   border-top: 3px solid var(--blue);
   box-shadow: var(--shadow-sm);
@@ -1718,7 +1723,7 @@ main {
 
 .skill-group {
   padding: 22px 24px;
-  background: rgba(255, 255, 255, 0.66);
+  background: var(--surface);
   border: 1px solid var(--line);
 }
 
