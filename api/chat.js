@@ -16,7 +16,7 @@ module.exports = async function handler(req, res) {
     return;
   }
 
-  const key = process.env.DEEPSEEKAPI;
+  const key = process.env.DEEPSEEKAPI || process.env.deepseekapi;
   if (!key) {
     res.status(500).json({ error: "Missing DEEPSEEKAPI" });
     return;
