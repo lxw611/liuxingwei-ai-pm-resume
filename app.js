@@ -86,14 +86,16 @@ function localAnswer(question) {
 }
 
 async function getAnswer(question) {
-  const endpoint = window.RESUME_AI_ENDPOINT;
-  if (!endpoint) return localAnswer(question);
+  const endpoint = window.RESUME_AI_ENDPOINT || "/api/chat";
 
   try {
     const response = await fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ question }),
+      body: JSON.stringify({
+        question,
+        knowledge: resumeData?.knowledge || [],
+      }),
     });
     if (!response.ok) throw new Error("chat endpoint failed");
     const payload = await response.json();
